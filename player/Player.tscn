@@ -208,7 +208,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 6, 7 )
+extents = Vector2( 7, 7 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 70.2457, 73.4754 )

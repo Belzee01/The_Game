@@ -19,10 +19,14 @@ config/name="The Game"
 run/main_scene="res://areas/test.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+dir="*res://engine/directions.gd"
+
 [display]
 
-window/size/width=1920
-window/size/height=1080
+window/size/width=1280
+window/size/height=768
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
