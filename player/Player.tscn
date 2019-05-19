@@ -1,25 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://player/Player-positions.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=1]
-resource_name = "idle_down"
-loop = true
-step = 0.5
-
-[sub_resource type="Animation" id=2]
-resource_name = "idle_left"
-loop = true
-step = 0.5
-
-[sub_resource type="Animation" id=3]
-resource_name = "idle_right"
-loop = true
-step = 0.5
-
-[sub_resource type="Animation" id=4]
-resource_name = "idle_up"
+[sub_resource type="Animation" id=14]
+resource_name = "hold_beer_down"
 loop = true
 step = 0.5
 tracks/0/type = "value"
@@ -29,31 +14,62 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 2, 3 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "push_down"
+[sub_resource type="Animation" id=15]
+resource_name = "hold_beer_left"
 loop = true
 step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
 
-[sub_resource type="Animation" id=6]
-resource_name = "push_left"
+[sub_resource type="Animation" id=16]
+resource_name = "hold_beer_right"
 loop = true
 step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
 
-[sub_resource type="Animation" id=7]
-resource_name = "push_right"
+[sub_resource type="Animation" id=17]
+resource_name = "hold_beer_up"
 loop = true
 step = 0.5
-
-[sub_resource type="Animation" id=8]
-resource_name = "push_up"
-loop = true
-step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "walk_down"
@@ -132,14 +148,10 @@ script = ExtResource( 1 )
 
 [node name="player_anim" type="AnimationPlayer" parent="."]
 playback_speed = 4.0
-anims/idle_down = SubResource( 1 )
-anims/idle_left = SubResource( 2 )
-anims/idle_right = SubResource( 3 )
-anims/idle_up = SubResource( 4 )
-anims/push_down = SubResource( 5 )
-anims/push_left = SubResource( 6 )
-anims/push_right = SubResource( 7 )
-anims/push_up = SubResource( 8 )
+anims/hold_beer_down = SubResource( 14 )
+anims/hold_beer_left = SubResource( 15 )
+anims/hold_beer_right = SubResource( 16 )
+anims/hold_beer_up = SubResource( 17 )
 anims/walk_down = SubResource( 9 )
 anims/walk_left = SubResource( 10 )
 anims/walk_right = SubResource( 11 )
@@ -148,7 +160,7 @@ anims/walk_up = SubResource( 12 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 4
-frame = 1
+frame = 2
 __meta__ = {
 "_edit_lock_": true
 }
