@@ -3,7 +3,7 @@ extends KinematicBody2D
 const SPEED = 220
 
 var movedir = dir.center
-var spritedir = "_down"
+var spritedir = "_right"
 
 func movement_loop():
 	var motion = movedir.normalized() * SPEED
@@ -16,9 +16,9 @@ func spritedir_loop():
 		dir.right:
 			spritedir = "_right"
 		dir.up:
-			spritedir = "_up"
+			spritedir = "_left"
 		dir.down:
-			spritedir = "_down"
+			spritedir = "_right"
 			
 func animation_switch(animation):
 	var new_animation = str(animation, spritedir)
