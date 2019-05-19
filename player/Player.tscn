@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
-[ext_resource path="res://player/player_move.png" type="Texture" id=2]
+[ext_resource path="res://player/Player-positions.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle_down"
@@ -120,7 +120,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 2, 3 ]
+"values": [ 0, 1 ]
 }
 
 [sub_resource type="RectangleShape2D" id=13]
