@@ -3,7 +3,7 @@
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://player/Player-positions.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=1]
 resource_name = "hold_beer_left"
 loop = true
 step = 0.5
@@ -20,7 +20,7 @@ tracks/0/keys = {
 "values": [ 2, 3 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=2]
 resource_name = "hold_beer_right"
 loop = true
 step = 0.5
@@ -49,7 +49,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=3]
 resource_name = "idle_beer_left"
 loop = true
 step = 0.5
@@ -66,7 +66,7 @@ tracks/0/keys = {
 "values": [ 2, 2 ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=4]
 resource_name = "idle_beer_right"
 loop = true
 step = 0.5
@@ -95,7 +95,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=5]
 resource_name = "idle_left"
 loop = true
 step = 0.5
@@ -112,7 +112,7 @@ tracks/0/keys = {
 "values": [ 0, 0 ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=6]
 resource_name = "idle_right"
 loop = true
 step = 0.5
@@ -141,7 +141,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=7]
 resource_name = "walk_left"
 loop = true
 step = 0.5
@@ -170,7 +170,7 @@ tracks/1/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=8]
 resource_name = "walk_right"
 loop = true
 step = 0.5
@@ -199,25 +199,25 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 
-[sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 29.7543, 103.475 )
+[sub_resource type="CircleShape2D" id=9]
+radius = 25.0
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 70.2457, 73.4754 )
 script = ExtResource( 1 )
 
 [node name="player_anim" type="AnimationPlayer" parent="."]
 playback_speed = 4.0
-anims/hold_beer_left = SubResource( 15 )
-anims/hold_beer_right = SubResource( 16 )
-anims/idle_beer_left = SubResource( 19 )
-anims/idle_beer_right = SubResource( 20 )
-anims/idle_left = SubResource( 17 )
-anims/idle_right = SubResource( 18 )
-anims/walk_left = SubResource( 10 )
-anims/walk_right = SubResource( 11 )
+anims/hold_beer_left = SubResource( 1 )
+anims/hold_beer_right = SubResource( 2 )
+anims/idle_beer_left = SubResource( 3 )
+anims/idle_beer_right = SubResource( 4 )
+anims/idle_left = SubResource( 5 )
+anims/idle_right = SubResource( 6 )
+anims/walk_left = SubResource( 7 )
+anims/walk_right = SubResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -110 )
 texture = ExtResource( 2 )
 flip_h = true
 hframes = 4
@@ -227,9 +227,8 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource( 13 )
+position = Vector2( 0, -13 )
+shape = SubResource( 9 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-

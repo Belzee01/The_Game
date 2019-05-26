@@ -1,25 +1,24 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://tiles/wall.tres" type="TileSet" id=2]
-[ext_resource path="res://GUI/alko_meter.png" type="Texture" id=3]
-[ext_resource path="res://areas/AlcoholizationMeter.gd" type="Script" id=4]
-[ext_resource path="res://bar/bar_table.png" type="Texture" id=5]
+[ext_resource path="res://tiles/wall.tres" type="TileSet" id=1]
+[ext_resource path="res://GUI/alko_meter.png" type="Texture" id=2]
+[ext_resource path="res://areas/AlcoholizationMeter.gd" type="Script" id=3]
+[ext_resource path="res://bar/bar_table.png" type="Texture" id=4]
+[ext_resource path="res://tables/table.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 250, 87.1457 )
 
 [node name="Node" type="Node"]
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 184.081, 583.995 )
-
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 65536, 0, 0, 65555, 0, 0, 131072, 0, 0, 131091, 0, 0, 196608, 0, 0, 196627, 0, 0, 262144, 0, 0, 262163, 0, 0, 327680, 0, 0, 327699, 0, 0, 393216, 0, 0, 393235, 0, 0, 458752, 0, 0, 458771, 0, 0, 524288, 0, 0, 524307, 0, 0, 589824, 0, 0, 589843, 0, 0, 655360, 0, 0, 655379, 0, 0, 720896, 0, 0, 720915, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 1310788, 0, 0, 1572864, 0, 0, 1638400, 0, 0, 1703936, 0, 0, 1703937, 0, 0, 1769472, 0, 0, 1769473, 0, 0, 1835009, 0, 0 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="ProgressBar" type="TextureProgress" parent="GUI"]
 margin_left = 67.0
@@ -27,11 +26,12 @@ margin_top = 8.0
 margin_right = 404.0
 margin_bottom = 58.0
 value = 90.0
-texture_progress = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
 nine_patch_stretch = true
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 318.09, 195.398 )
 z_index = -1
 
@@ -40,7 +40,7 @@ margin_left = -247.656
 margin_top = -129.508
 margin_right = 252.344
 margin_bottom = 120.492
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -52,3 +52,59 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="YSort" type="YSort" parent="."]
+editor/display_folded = true
+
+[node name="table" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1093.65, 538.665 )
+
+[node name="table12" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 557.832, 442.783 )
+
+[node name="table13" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 563.472, 624.677 )
+
+[node name="table14" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 387.218, 710.689 )
+
+[node name="table15" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 382.988, 535.845 )
+
+[node name="table17" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 188.403, 499.184 )
+
+[node name="table16" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 178.533, 702.229 )
+
+[node name="table11" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 907.521, 634.548 )
+
+[node name="table10" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1093.65, 727.61 )
+
+[node name="table9" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 728.446, 714.919 )
+
+[node name="table8" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 727.036, 535.845 )
+
+[node name="table7" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 722.806, 349.72 )
+
+[node name="table6" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1089.42, 358.181 )
+
+[node name="table5" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 900.47, 252.428 )
+
+[node name="table3" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1085.18, 183.336 )
+
+[node name="table4" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 719.986, 177.696 )
+
+[node name="table2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 906.562, 449.044 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 184.081, 583.995 )
