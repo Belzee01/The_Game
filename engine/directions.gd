@@ -13,3 +13,6 @@ func rand_movement():
 		2: return right
 		3: return up
 		4: return down
+		
+var holds_beer = false
+var beer_loaded = false

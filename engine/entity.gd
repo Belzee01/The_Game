@@ -14,7 +14,7 @@ var spritedir = "_right"
 
 var timer = 0.0
 var alkoTimer = 0.0
-var alkoValue = 200.0
+var alkoValue = 200
 
 func movement_loop():
 	var motion = movedir.normalized() * SPEED
@@ -48,7 +48,7 @@ func process_alko_meter_value(delta):
 	if alkoValue < 0.0:
 		alkoValue = 0.0
 	alkoTimer += delta
-	if alkoTimer >= 0.3:
+	if alkoTimer >= 1.0:
 		alkoTimer = 0.0
 		alkoValue -= 1
 	SPEED = 1.7* alkoValue
@@ -88,3 +88,9 @@ func animation_switch(animation):
 	if $player_anim.current_animation!= new_animation:
 		$player_anim.play(new_animation)
 	
+func hold_beer(beer):
+	var current_beer = beer.instance()
+	current_beer.add_to_group(str(current_beer.get_name(), self))
+	add_child(current_beer)
+	if get_tree().get_nodes_in_group(str(current_beer.get_name(), self)).size() > 1:
+		current_beer.queue_free()
