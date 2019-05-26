@@ -8,7 +8,7 @@
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 250, 87.1457 )
+extents = Vector2( 250, 171.212 )
 
 [node name="Node" type="Node"]
 
@@ -31,7 +31,6 @@ nine_patch_stretch = true
 script = ExtResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 318.09, 195.398 )
 z_index = -1
 
@@ -46,65 +45,29 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -4.54413, -40.8973 )
+position = Vector2( -2.27204, 29.5371 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="YSort" type="YSort" parent="."]
-editor/display_folded = true
-
-[node name="table" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 1093.65, 538.665 )
-
-[node name="table12" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 557.832, 442.783 )
-
-[node name="table13" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 563.472, 624.677 )
 
 [node name="table14" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 387.218, 710.689 )
-
-[node name="table15" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 382.988, 535.845 )
-
-[node name="table17" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 188.403, 499.184 )
-
-[node name="table16" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 178.533, 702.229 )
-
-[node name="table11" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 907.521, 634.548 )
-
-[node name="table10" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 1093.65, 727.61 )
+position = Vector2( 428.115, 697.057 )
 
 [node name="table9" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 728.446, 714.919 )
+position = Vector2( 937.477, 685.382 )
 
 [node name="table8" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 727.036, 535.845 )
+position = Vector2( 672.506, 531.301 )
 
 [node name="table7" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 722.806, 349.72 )
+position = Vector2( 754.615, 242.932 )
 
 [node name="table6" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 1089.42, 358.181 )
-
-[node name="table5" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 900.47, 252.428 )
+position = Vector2( 1003.08, 458.152 )
 
 [node name="table3" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 1085.18, 183.336 )
 
-[node name="table4" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 719.986, 177.696 )
-
-[node name="table2" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 906.562, 449.044 )
-
 [node name="Player" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 184.081, 583.995 )
+position = Vector2( 131.823, 522.649 )
+
