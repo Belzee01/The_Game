@@ -95,22 +95,22 @@ shape = SubResource( 5 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="table14" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 428.115, 697.057 )
+position = Vector2( 530.359, 656.16 )
 
 [node name="table9" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 937.477, 685.382 )
+position = Vector2( 978.374, 617.22 )
 
 [node name="table8" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 672.506, 531.301 )
+position = Vector2( 708.859, 501.764 )
 
 [node name="table7" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 754.615, 242.932 )
+position = Vector2( 784.152, 206.579 )
 
 [node name="table6" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1003.08, 458.152 )
+position = Vector2( 1025.8, 401.35 )
 
 [node name="table3" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1085.18, 183.336 )
+position = Vector2( 1048.83, 156.071 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 134.095, 633.981 )
