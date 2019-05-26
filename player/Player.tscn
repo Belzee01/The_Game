@@ -199,11 +199,11 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 29.7543, 103.475 )
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 25.0
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 70.2457, 73.4754 )
 script = ExtResource( 1 )
 
 [node name="player_anim" type="AnimationPlayer" parent="."]
@@ -218,6 +218,7 @@ anims/walk_left = SubResource( 7 )
 anims/walk_right = SubResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -110 )
 texture = ExtResource( 2 )
 flip_h = true
 hframes = 4
@@ -227,9 +228,8 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2( 0, -13 )
 shape = SubResource( 9 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-
