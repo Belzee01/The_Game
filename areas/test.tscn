@@ -1,18 +1,30 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://tiles/wall.tres" type="TileSet" id=1]
 [ext_resource path="res://GUI/alko_meter.png" type="Texture" id=2]
 [ext_resource path="res://areas/AlcoholizationMeter.gd" type="Script" id=3]
 [ext_resource path="res://bar/bar_table.png" type="Texture" id=4]
 [ext_resource path="res://beers/beer1.gd" type="Script" id=5]
-[ext_resource path="res://tables/table.tscn" type="PackedScene" id=6]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://beers/beer2.gd" type="Script" id=6]
+[ext_resource path="res://beers/beer3.gd" type="Script" id=7]
+[ext_resource path="res://beers/beer4.gd" type="Script" id=8]
+[ext_resource path="res://tables/table.tscn" type="PackedScene" id=9]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 250, 171.212 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 39.3439, 64.4238 )
+extents = Vector2( 40, 65 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 40, 65 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 40, 65 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 40, 65 )
 
 [node name="Node" type="Node"]
 
@@ -52,34 +64,58 @@ __meta__ = {
 position = Vector2( -2.27204, 29.5371 )
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+[node name="beer_1_area" type="Area2D" parent="StaticBody2D"]
 script = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+[node name="beer_1_collision" type="CollisionShape2D" parent="StaticBody2D/beer_1_area"]
 position = Vector2( -195.399, 181.766 )
 shape = SubResource( 2 )
 
+[node name="beer_2_area" type="Area2D" parent="StaticBody2D"]
+script = ExtResource( 6 )
+
+[node name="beer_2_collision" type="CollisionShape2D" parent="StaticBody2D/beer_2_area"]
+position = Vector2( -81.7947, 181.766 )
+shape = SubResource( 3 )
+
+[node name="beer_3_area" type="Area2D" parent="StaticBody2D"]
+script = ExtResource( 7 )
+
+[node name="beer_3_collision" type="CollisionShape2D" parent="StaticBody2D/beer_3_area"]
+position = Vector2( 49.9857, 186.31 )
+shape = SubResource( 4 )
+
+[node name="beer_4_area" type="Area2D" parent="StaticBody2D"]
+script = ExtResource( 8 )
+
+[node name="beer_4_collision" type="CollisionShape2D" parent="StaticBody2D/beer_4_area"]
+position = Vector2( 181.766, 186.31 )
+shape = SubResource( 5 )
+
 [node name="YSort" type="YSort" parent="."]
 
-[node name="table14" parent="YSort" instance=ExtResource( 6 )]
+[node name="table14" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 428.115, 697.057 )
 
-[node name="table9" parent="YSort" instance=ExtResource( 6 )]
+[node name="table9" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 937.477, 685.382 )
 
-[node name="table8" parent="YSort" instance=ExtResource( 6 )]
+[node name="table8" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 672.506, 531.301 )
 
-[node name="table7" parent="YSort" instance=ExtResource( 6 )]
+[node name="table7" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 754.615, 242.932 )
 
-[node name="table6" parent="YSort" instance=ExtResource( 6 )]
+[node name="table6" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 1003.08, 458.152 )
 
-[node name="table3" parent="YSort" instance=ExtResource( 6 )]
+[node name="table3" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 1085.18, 183.336 )
 
-[node name="Player" parent="YSort" instance=ExtResource( 7 )]
+[node name="Player" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 134.095, 633.981 )
 
-[connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="StaticBody2D/beer_1_area" to="StaticBody2D/beer_1_area" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="StaticBody2D/beer_2_area" to="StaticBody2D/beer_2_area" method="_on_beer_2_area_body_entered"]
+[connection signal="body_entered" from="StaticBody2D/beer_3_area" to="StaticBody2D/beer_3_area" method="_on_beer_3_area_body_entered"]
+[connection signal="body_entered" from="StaticBody2D/beer_4_area" to="StaticBody2D/beer_4_area" method="_on_beer_4_area_body_entered"]

@@ -1,11 +1,11 @@
 extends Node
 
-const TYPE_SCENE = "beer1"
+const TYPE_SCENE = "beer4"
 
 var passed_to_client = false
 
-const volume = 100
-const price = 3
+const volume = 150
+const price = 7
 
 var current_beer_volume = volume
 
@@ -17,10 +17,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func drink(delta) :
-	current_beer_volume -= 3 * delta
-
-func _on_Area2D_body_entered(body):
+func _on_beer_4_area_body_entered(body):
 	if body.is_in_group("player"):
 		if dir.holds_beer == false:
 			dir.holds_beer = true
