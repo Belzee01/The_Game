@@ -16,3 +16,6 @@ func _process(delta):
 	if timer >= 1.0:
 		timer = 0.0
 		value -= 1
+		
+func get_value():
+	value

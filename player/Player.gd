@@ -3,7 +3,7 @@ extends "res://engine/entity.gd"
 func _physics_process(delta):
 	controls_loop()
 	movement_loop()
-	spritedir_loop() 
+	spritedir_loop(delta) 
 	
 	if movedir != dir.center:
 		animation_switch("walk")
