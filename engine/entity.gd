@@ -14,7 +14,6 @@ var spritedir = "_right"
 
 var timer = 0.0
 var alkoTimer = 0.0
-var alkoValue = 200
 
 func movement_loop():
 	var motion = movedir.normalized() * SPEED
@@ -24,16 +23,16 @@ func spritedir_loop(delta):
 	match movedir:
 		dir.left:
 			spritedir = "_left"
-			accelerationHorizontal = -alkoValue*accelerationBase
+			accelerationHorizontal = -dir.alkoValue*accelerationBase
 		dir.right:
 			spritedir = "_right"
-			accelerationHorizontal = alkoValue*accelerationBase
+			accelerationHorizontal = dir.alkoValue*accelerationBase
 		dir.up:
 			spritedir = "_left"
-			accelerationVertical = -alkoValue*accelerationBase
+			accelerationVertical = -dir.alkoValue*accelerationBase
 		dir.down:
 			spritedir = "_right"
-			accelerationVertical = alkoValue*accelerationBase
+			accelerationVertical = dir.alkoValue*accelerationBase
 	
 	timer += delta
 	process_horizontal_slide()
@@ -45,13 +44,13 @@ func spritedir_loop(delta):
 			
 			
 func process_alko_meter_value(delta):
-	if alkoValue < 0.0:
-		alkoValue = 0.0
+	if dir.alkoValue < 0.0:
+		dir.alkoValue = 0.0
 	alkoTimer += delta
 	if alkoTimer >= 1.0:
 		alkoTimer = 0.0
-		alkoValue -= 1
-	SPEED = 1.7* alkoValue
+		dir.alkoValue -= 1
+	SPEED = 1.7* dir.alkoValue
 	SPEED = clamp(SPEED, 100, MAX_SPEED)
 			
 func process_vertical_slide():
@@ -101,6 +100,7 @@ func leave_beer():
 		remove_child(current_beer)
 		current_beer.queue_free()
 		dir.beer_loaded = false
+		reset_beer()
 		
 func pass_beer():
 	if dir.which_in_client_area != 0:
@@ -111,6 +111,31 @@ func pass_beer():
 			current_beer.queue_free()
 			dir.beer_loaded = false
 			dir.holds_beer = false
+			reset_beer()
 			
 func process_beer_points(beer):
 	pass
+	
+func reset_beer():
+	match dir.beer_type:
+			"beer1":
+				beer1.reset()
+			"beer2":
+				beer2.reset()
+			"beer3":
+				beer3.reset()
+			"beer4":
+				beer4.reset()
+	
+func drink_beer(delta):
+	if get_tree().get_nodes_in_group(str("beer", self)).size() > 0:
+		match dir.beer_type:
+			"beer1":
+				beer1.drink(delta)
+			"beer2":
+				beer2.drink(delta)
+			"beer3":
+				beer3.drink(delta)
+			"beer4":
+				beer4.drink(delta)
+		dir.alkoValue = clamp(dir.alkoValue, 0, 200)

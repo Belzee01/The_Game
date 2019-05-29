@@ -8,6 +8,7 @@ func _physics_process(delta):
 	is_beer_picked_up()
 	is_beer_left()
 	is_beer_passed()
+	is_beer_drinked(delta)
 	if movedir != dir.center:
 		if dir.holds_beer == false :
 			animation_switch("walk")
@@ -38,6 +39,11 @@ func is_beer_passed():
 	if dir.holds_beer == true:
 		if Input.is_action_just_pressed("pass_beer"):
 			pass_beer()
+			
+func is_beer_drinked(delta):
+	if dir.holds_beer == true:
+		if Input.is_action_pressed("drink_beer"):
+			drink_beer(delta)
 
 func load_beer_scene():
 	if dir.beer_loaded == false:

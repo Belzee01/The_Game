@@ -20,3 +20,5 @@ var beer_type = 0
 
 var is_in_beer_area = false
 var which_in_client_area = 0
+
+var alkoValue = 200

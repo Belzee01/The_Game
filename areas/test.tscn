@@ -1,21 +1,22 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://tiles/wall.tres" type="TileSet" id=1]
-[ext_resource path="res://GUI/alko_meter.png" type="Texture" id=2]
-[ext_resource path="res://areas/AlcoholizationMeter.gd" type="Script" id=3]
-[ext_resource path="res://bar/bar_table.png" type="Texture" id=4]
-[ext_resource path="res://beers/beer1.gd" type="Script" id=5]
-[ext_resource path="res://beers/beer2.gd" type="Script" id=6]
-[ext_resource path="res://beers/beer3.gd" type="Script" id=7]
-[ext_resource path="res://beers/beer4.gd" type="Script" id=8]
-[ext_resource path="res://tables/table.tscn" type="PackedScene" id=9]
-[ext_resource path="res://clients/client1.tscn" type="PackedScene" id=10]
-[ext_resource path="res://clients/client4.gd" type="Script" id=11]
-[ext_resource path="res://clients/clients.gd" type="Script" id=12]
-[ext_resource path="res://clients/client3.gd" type="Script" id=13]
-[ext_resource path="res://clients/client2.gd" type="Script" id=14]
-[ext_resource path="res://clients/client1.gd" type="Script" id=15]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=16]
+[ext_resource path="res://tiles/wood_wall.tres" type="TileSet" id=1]
+[ext_resource path="res://tiles/wood_floor.tres" type="TileSet" id=2]
+[ext_resource path="res://GUI/alko_meter.png" type="Texture" id=3]
+[ext_resource path="res://areas/AlcoholizationMeter.gd" type="Script" id=4]
+[ext_resource path="res://bar/bar_table.png" type="Texture" id=5]
+[ext_resource path="res://beers/beer1.gd" type="Script" id=6]
+[ext_resource path="res://beers/beer2.gd" type="Script" id=7]
+[ext_resource path="res://beers/beer3.gd" type="Script" id=8]
+[ext_resource path="res://beers/beer4.gd" type="Script" id=9]
+[ext_resource path="res://tables/table.tscn" type="PackedScene" id=10]
+[ext_resource path="res://clients/client1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://clients/client4.gd" type="Script" id=12]
+[ext_resource path="res://clients/clients.gd" type="Script" id=13]
+[ext_resource path="res://clients/client3.gd" type="Script" id=14]
+[ext_resource path="res://clients/client2.gd" type="Script" id=15]
+[ext_resource path="res://clients/client1.gd" type="Script" id=16]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 250, 171.212 )
@@ -46,13 +47,19 @@ radius = 190.0
 
 [node name="Node" type="Node"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="wall" type="TileMap" parent="."]
+position = Vector2( 1, -4 )
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 65536, 0, 0, 65555, 0, 0, 131072, 0, 0, 131091, 0, 0, 196608, 0, 0, 196627, 0, 0, 262144, 0, 0, 262163, 0, 0, 327680, 0, 0, 327699, 0, 0, 393216, 0, 0, 393235, 0, 0, 458752, 0, 0, 458771, 0, 0, 524288, 0, 0, 524307, 0, 0, 589824, 0, 0, 589843, 0, 0, 655360, 0, 0, 655379, 0, 0, 720896, 0, 0, 720915, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 1310788, 0, 0, 1572864, 0, 0, 1638400, 0, 0, 1703936, 0, 0, 1703937, 0, 0, 1769472, 0, 0, 1769473, 0, 0, 1835009, 0, 0 )
+tile_data = PoolIntArray( -131075, 0, 0, -196608, 0, 0, -196605, 0, 0, -196602, 0, 0, -196599, 0, 0, -196596, 0, 0, -196593, 0, 0, -196590, 0, 0, -196587, 0, 0, -3, 0, 0, -65536, 0, 0, -65533, 0, 0, -65530, 0, 0, -65527, 0, 0, -65524, 0, 0, -65521, 0, 0, -65518, 0, 0, -65515, 0, 0, 131069, 0, 0, 65557, 0, 0, 262141, 0, 0, 196629, 0, 0, 393213, 0, 0, 327701, 0, 0, 524285, 0, 0, 458773, 0, 0, 655357, 0, 0, 589845, 0, 0, 786429, 0, 0, 720917, 0, 0, 917501, 0, 0, 851968, 0, 0, 851971, 0, 0, 851974, 0, 0, 851977, 0, 0, 851980, 0, 0, 851983, 0, 0, 851986, 0, 0, 851989, 0, 0, 1048573, 0, 0, 983040, 0, 0, 983043, 0, 0, 983046, 0, 0, 983049, 0, 0, 983052, 0, 0, 983055, 0, 0, 983058, 0, 0, 983061, 0, 0 )
+
+[node name="floor" type="TileMap" parent="."]
+z_index = -1
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 8, 0, 0 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="ProgressBar" type="TextureProgress" parent="GUI"]
 margin_left = 67.0
@@ -61,13 +68,12 @@ margin_right = 404.0
 margin_bottom = 58.0
 max_value = 200.0
 value = 200.0
-texture_progress = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
 nine_patch_stretch = true
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 318.09, 195.398 )
+position = Vector2( 255.355, 190.256 )
 z_index = -1
 
 [node name="TextureRect" type="TextureRect" parent="StaticBody2D"]
@@ -75,7 +81,7 @@ margin_left = -247.656
 margin_top = -129.508
 margin_right = 252.344
 margin_bottom = 120.492
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -83,95 +89,126 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -2.27204, 29.5371 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="beer_1_area" type="Area2D" parent="StaticBody2D"]
-script = ExtResource( 5 )
+editor/display_folded = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="beer_1_collision" type="CollisionShape2D" parent="StaticBody2D/beer_1_area"]
 position = Vector2( -195.399, 181.766 )
 shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="beer_2_area" type="Area2D" parent="StaticBody2D"]
-script = ExtResource( 6 )
+editor/display_folded = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="beer_2_collision" type="CollisionShape2D" parent="StaticBody2D/beer_2_area"]
 position = Vector2( -81.7947, 181.766 )
 shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="beer_3_area" type="Area2D" parent="StaticBody2D"]
-script = ExtResource( 7 )
+editor/display_folded = true
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="beer_3_collision" type="CollisionShape2D" parent="StaticBody2D/beer_3_area"]
 position = Vector2( 49.9857, 186.31 )
 shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="beer_4_area" type="Area2D" parent="StaticBody2D"]
-script = ExtResource( 8 )
+editor/display_folded = true
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="beer_4_collision" type="CollisionShape2D" parent="StaticBody2D/beer_4_area"]
 position = Vector2( 181.766, 186.31 )
 shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="table14" parent="YSort" instance=ExtResource( 9 )]
+[node name="table14" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 530.359, 655.255 )
 
-[node name="table9" parent="YSort" instance=ExtResource( 9 )]
+[node name="table9" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 978.374, 617.22 )
 
-[node name="table8" parent="YSort" instance=ExtResource( 9 )]
+[node name="table8" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 765.887, 437.494 )
 
-[node name="table6" parent="YSort" instance=ExtResource( 9 )]
+[node name="table6" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 993.213, 277.337 )
 
-[node name="client4" parent="YSort" instance=ExtResource( 10 )]
+[node name="client4" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 1030.02, 532.059 )
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
 [node name="client4_area" type="Area2D" parent="YSort/client4"]
 position = Vector2( -5.43115, 99.5728 )
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client4/client4_area"]
 position = Vector2( -175.609, 66.9855 )
 shape = SubResource( 6 )
 
-[node name="client3" parent="YSort" instance=ExtResource( 10 )]
+[node name="client3" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 1055.36, 177.218 )
-script = ExtResource( 13 )
+script = ExtResource( 14 )
 
 [node name="client3_area" type="Area2D" parent="YSort/client3"]
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client3/client3_area"]
 position = Vector2( -182.852, 182.852 )
 shape = SubResource( 7 )
 
-[node name="client2" parent="YSort" instance=ExtResource( 10 )]
+[node name="client2" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 826.345, 322.051 )
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 
 [node name="client2_area" type="Area2D" parent="YSort/client2"]
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client2/client2_area"]
 position = Vector2( -188.283, 213.629 )
 shape = SubResource( 8 )
 
-[node name="client1" parent="YSort" instance=ExtResource( 10 )]
+[node name="client1" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 580.129, 538.395 )
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
 [node name="client1_area" type="Area2D" parent="YSort/client1"]
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client1/client1_area"]
 position = Vector2( -162.937, 190.093 )
 shape = SubResource( 9 )
 
-[node name="Player" parent="YSort" instance=ExtResource( 16 )]
+[node name="Player" parent="YSort" instance=ExtResource( 17 )]
 position = Vector2( 134.095, 633.981 )
 
 [connection signal="body_entered" from="StaticBody2D/beer_1_area" to="StaticBody2D/beer_1_area" method="_on_Area2D_body_entered"]
