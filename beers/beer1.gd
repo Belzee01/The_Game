@@ -22,6 +22,10 @@ func drink(delta) :
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
-		if dir.holds_beer == false:
-			dir.holds_beer = true
-			dir.beer_type = TYPE_SCENE
+		dir.is_in_beer_area = true
+		dir.beer_type = TYPE_SCENE
+		print(dir.is_in_beer_area)
+
+func _on_beer_1_area_body_exited(body):
+	dir.is_in_beer_area = false
+	print(dir.is_in_beer_area)

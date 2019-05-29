@@ -90,7 +90,14 @@ func animation_switch(animation):
 	
 func hold_beer(beer):
 	var current_beer = beer.instance()
-	current_beer.add_to_group(str(current_beer.get_name(), self))
+	current_beer.add_to_group(str("beer", self))
 	add_child(current_beer)
-	if get_tree().get_nodes_in_group(str(current_beer.get_name(), self)).size() > 1:
+	if get_tree().get_nodes_in_group(str("beer", self)).size() > 1:
 		current_beer.queue_free()
+		
+func leave_beer():
+	if get_tree().get_nodes_in_group(str("beer", self)).size() > 0:
+		var current_beer = get_tree().get_nodes_in_group(str("beer", self)).pop_front()
+		remove_child(current_beer)
+		current_beer.queue_free()
+		dir.beer_loaded = false

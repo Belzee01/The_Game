@@ -17,3 +17,5 @@ func rand_movement():
 var holds_beer = false
 var beer_loaded = false
 var beer_type = 0
+
+var is_in_beer_area = false
