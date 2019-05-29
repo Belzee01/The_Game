@@ -101,3 +101,16 @@ func leave_beer():
 		remove_child(current_beer)
 		current_beer.queue_free()
 		dir.beer_loaded = false
+		
+func pass_beer():
+	if dir.which_in_client_area != 0:
+		if get_tree().get_nodes_in_group(str("beer", self)).size() > 0:
+			var current_beer = get_tree().get_nodes_in_group(str("beer", self)).pop_front()
+			process_beer_points(current_beer)
+			remove_child(current_beer)
+			current_beer.queue_free()
+			dir.beer_loaded = false
+			dir.holds_beer = false
+			
+func process_beer_points(beer):
+	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://tiles/wall.tres" type="TileSet" id=1]
 [ext_resource path="res://GUI/alko_meter.png" type="Texture" id=2]
@@ -10,7 +10,12 @@
 [ext_resource path="res://beers/beer4.gd" type="Script" id=8]
 [ext_resource path="res://tables/table.tscn" type="PackedScene" id=9]
 [ext_resource path="res://clients/client1.tscn" type="PackedScene" id=10]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=11]
+[ext_resource path="res://clients/client4.gd" type="Script" id=11]
+[ext_resource path="res://clients/clients.gd" type="Script" id=12]
+[ext_resource path="res://clients/client3.gd" type="Script" id=13]
+[ext_resource path="res://clients/client2.gd" type="Script" id=14]
+[ext_resource path="res://clients/client1.gd" type="Script" id=15]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 250, 171.212 )
@@ -26,6 +31,18 @@ extents = Vector2( 40, 65 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 40, 65 )
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 190.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 190.0
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 190.0
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 190.0
 
 [node name="Node" type="Node"]
 
@@ -111,17 +128,50 @@ position = Vector2( 993.213, 277.337 )
 
 [node name="client4" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 1030.02, 532.059 )
+script = ExtResource( 11 )
+
+[node name="client4_area" type="Area2D" parent="YSort/client4"]
+position = Vector2( -5.43115, 99.5728 )
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client4/client4_area"]
+position = Vector2( -175.609, 66.9855 )
+shape = SubResource( 6 )
 
 [node name="client3" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 1055.36, 177.218 )
+script = ExtResource( 13 )
+
+[node name="client3_area" type="Area2D" parent="YSort/client3"]
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client3/client3_area"]
+position = Vector2( -182.852, 182.852 )
+shape = SubResource( 7 )
 
 [node name="client2" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 826.345, 322.051 )
+script = ExtResource( 14 )
+
+[node name="client2_area" type="Area2D" parent="YSort/client2"]
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client2/client2_area"]
+position = Vector2( -188.283, 213.629 )
+shape = SubResource( 8 )
 
 [node name="client1" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 580.129, 538.395 )
+script = ExtResource( 15 )
 
-[node name="Player" parent="YSort" instance=ExtResource( 11 )]
+[node name="client1_area" type="Area2D" parent="YSort/client1"]
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client1/client1_area"]
+position = Vector2( -162.937, 190.093 )
+shape = SubResource( 9 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 16 )]
 position = Vector2( 134.095, 633.981 )
 
 [connection signal="body_entered" from="StaticBody2D/beer_1_area" to="StaticBody2D/beer_1_area" method="_on_Area2D_body_entered"]
@@ -132,3 +182,11 @@ position = Vector2( 134.095, 633.981 )
 [connection signal="body_exited" from="StaticBody2D/beer_3_area" to="StaticBody2D/beer_3_area" method="_on_beer_3_area_body_exited"]
 [connection signal="body_entered" from="StaticBody2D/beer_4_area" to="StaticBody2D/beer_4_area" method="_on_beer_4_area_body_entered"]
 [connection signal="body_exited" from="StaticBody2D/beer_4_area" to="StaticBody2D/beer_4_area" method="_on_beer_4_area_body_exited"]
+[connection signal="body_entered" from="YSort/client4/client4_area" to="YSort/client4/client4_area" method="_on_client4_area_body_entered"]
+[connection signal="body_exited" from="YSort/client4/client4_area" to="YSort/client4/client4_area" method="_on_client4_area_body_exited"]
+[connection signal="body_entered" from="YSort/client3/client3_area" to="YSort/client3/client3_area" method="_on_client3_area_body_entered"]
+[connection signal="body_exited" from="YSort/client3/client3_area" to="YSort/client3/client3_area" method="_on_client3_area_body_exited"]
+[connection signal="body_entered" from="YSort/client2/client2_area" to="YSort/client2/client2_area" method="_on_client2_area_body_entered"]
+[connection signal="body_exited" from="YSort/client2/client2_area" to="YSort/client2/client2_area" method="_on_client2_area_body_exited"]
+[connection signal="body_entered" from="YSort/client1/client1_area" to="YSort/client1/client1_area" method="_on_client1_area_body_entered"]
+[connection signal="body_exited" from="YSort/client1/client1_area" to="YSort/client1/client1_area" method="_on_client1_area_body_exited"]
