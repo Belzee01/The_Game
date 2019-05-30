@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://tiles/wood_wall.tres" type="TileSet" id=1]
 [ext_resource path="res://tiles/wood_floor.tres" type="TileSet" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://clients/client2.gd" type="Script" id=15]
 [ext_resource path="res://clients/client1.gd" type="Script" id=16]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=17]
+[ext_resource path="res://music/PixelParade.ogg" type="AudioStream" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 250, 171.212 )
@@ -210,6 +211,10 @@ shape = SubResource( 9 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 17 )]
 position = Vector2( 134.095, 633.981 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+autoplay = true
 
 [connection signal="body_entered" from="StaticBody2D/beer_1_area" to="StaticBody2D/beer_1_area" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="StaticBody2D/beer_1_area" to="StaticBody2D/beer_1_area" method="_on_beer_1_area_body_exited"]
