@@ -1,6 +1,6 @@
 extends Node
 
-const TYPE_SCENE = "beer4"
+const TYPE_SCENE = 4
 
 var passed_to_client = false
 
@@ -12,7 +12,8 @@ func _ready():
 func _on_beer_4_area_body_entered(body):
 	if body.is_in_group("player"):
 		dir.is_in_beer_area = true
-		dir.beer_type = TYPE_SCENE
+		if dir.holds_beer == false:
+			dir.beer_type = TYPE_SCENE
 
 
 func _on_beer_4_area_body_exited(body):

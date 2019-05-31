@@ -22,3 +22,15 @@ var is_in_beer_area = false
 var which_in_client_area = 0
 
 var alkoValue = 200
+
+var client_1_order = 0
+var client_2_order = 0
+var client_3_order = 0
+var client_4_order = 0
+
+var client_1_timer = 0
+var client_2_timer = 0
+var client_3_timer = 0
+var client_4_timer = 0
+
+var passable = false

@@ -3,6 +3,7 @@
 [ext_resource path="res://clients/client_utils/beer_order_2.png" type="Texture" id=1]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( -115, -272 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

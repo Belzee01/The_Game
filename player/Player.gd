@@ -38,7 +38,8 @@ func is_beer_left():
 func is_beer_passed():
 	if dir.holds_beer == true:
 		if Input.is_action_just_pressed("pass_beer"):
-			pass_beer()
+			if dir.passable == true:
+				pass_beer()
 			
 func is_beer_drinked(delta):
 	if dir.holds_beer == true:
@@ -48,13 +49,13 @@ func is_beer_drinked(delta):
 func load_beer_scene():
 	if dir.beer_loaded == false:
 		match dir.beer_type:
-			"beer1":
+			1:
 				hold_beer(preload("res://beers/beer1.tscn"))
-			"beer2":
+			2:
 				hold_beer(preload("res://beers/beer2.tscn"))
-			"beer3":
+			3:
 				hold_beer(preload("res://beers/beer3.tscn"))
-			"beer4":
+			4:
 				hold_beer(preload("res://beers/beer4.tscn"))
 		dir.beer_loaded = true
 

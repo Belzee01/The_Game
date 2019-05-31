@@ -111,6 +111,7 @@ func pass_beer():
 			current_beer.queue_free()
 			dir.beer_loaded = false
 			dir.holds_beer = false
+			fullfill_order()
 			reset_beer()
 			
 func process_beer_points(beer):
@@ -118,24 +119,40 @@ func process_beer_points(beer):
 	
 func reset_beer():
 	match dir.beer_type:
-			"beer1":
+			1:
 				beer1.reset()
-			"beer2":
+			2:
 				beer2.reset()
-			"beer3":
+			3:
 				beer3.reset()
-			"beer4":
+			4:
 				beer4.reset()
-	
+
+func fullfill_order():
+	match dir.beer_type:
+			1:
+				dir.client_1_order = 0
+				dir.client_1_timer = 0
+			2:
+				dir.client_2_order = 0
+				dir.client_2_timer = 0
+			3:
+				dir.client_3_order = 0
+				dir.client_3_timer = 0
+			4:
+				dir.client_4_order = 0
+				dir.client_4_timer = 0
+	dir.beer_type = 0
+
 func drink_beer(delta):
 	if get_tree().get_nodes_in_group(str("beer", self)).size() > 0:
 		match dir.beer_type:
-			"beer1":
+			1:
 				beer1.drink(delta)
-			"beer2":
+			2:
 				beer2.drink(delta)
-			"beer3":
+			3:
 				beer3.drink(delta)
-			"beer4":
+			4:
 				beer4.drink(delta)
 		dir.alkoValue = clamp(dir.alkoValue, 0, 200)
