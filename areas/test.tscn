@@ -1,28 +1,35 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://tiles/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://GUI/alko_meter.png" type="Texture" id=2]
 [ext_resource path="res://areas/AlcoholizationMeter.gd" type="Script" id=3]
-[ext_resource path="res://beers/beer1.gd" type="Script" id=4]
-[ext_resource path="res://beers/beer2.gd" type="Script" id=5]
-[ext_resource path="res://beers/beer3.gd" type="Script" id=6]
-[ext_resource path="res://beers/beer4.gd" type="Script" id=7]
-[ext_resource path="res://tables/table.tscn" type="PackedScene" id=8]
-[ext_resource path="res://clients/client4.tscn" type="PackedScene" id=9]
-[ext_resource path="res://clients/client4.gd" type="Script" id=10]
-[ext_resource path="res://clients/clients.gd" type="Script" id=11]
-[ext_resource path="res://clients/client3.tscn" type="PackedScene" id=12]
-[ext_resource path="res://clients/client3.gd" type="Script" id=13]
-[ext_resource path="res://clients/client2.tscn" type="PackedScene" id=14]
-[ext_resource path="res://clients/client2.gd" type="Script" id=15]
-[ext_resource path="res://clients/client1.tscn" type="PackedScene" id=16]
-[ext_resource path="res://clients/client1.gd" type="Script" id=17]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=18]
-[ext_resource path="res://bar/bar.png" type="Texture" id=19]
-[ext_resource path="res://music/PixelParade.ogg" type="AudioStream" id=20]
+[ext_resource path="res://bar/bar.png" type="Texture" id=4]
+[ext_resource path="res://beers/beer1.gd" type="Script" id=5]
+[ext_resource path="res://beers/beer2.gd" type="Script" id=6]
+[ext_resource path="res://beers/beer3.gd" type="Script" id=7]
+[ext_resource path="res://beers/beer4.gd" type="Script" id=8]
+[ext_resource path="res://tables/table2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://tables/table.tscn" type="PackedScene" id=10]
+[ext_resource path="res://clients/client4.tscn" type="PackedScene" id=11]
+[ext_resource path="res://clients/client4.gd" type="Script" id=12]
+[ext_resource path="res://clients/clients.gd" type="Script" id=13]
+[ext_resource path="res://clients/client3.tscn" type="PackedScene" id=14]
+[ext_resource path="res://clients/client3.gd" type="Script" id=15]
+[ext_resource path="res://clients/client2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://clients/client2.gd" type="Script" id=17]
+[ext_resource path="res://clients/client1.tscn" type="PackedScene" id=18]
+[ext_resource path="res://clients/client1.gd" type="Script" id=19]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=20]
+[ext_resource path="res://music/PixelParade.ogg" type="AudioStream" id=21]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 352.828, 70.6422 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 55.1861, 150.165 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 244.65, 171.212 )
+extents = Vector2( 40, 65 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 40, 65 )
@@ -33,8 +40,8 @@ extents = Vector2( 40, 65 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 40, 65 )
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 40, 65 )
+[sub_resource type="CircleShape2D" id=6]
+radius = 190.0
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 190.0
@@ -43,9 +50,6 @@ radius = 190.0
 radius = 190.0
 
 [sub_resource type="CircleShape2D" id=9]
-radius = 190.0
-
-[sub_resource type="CircleShape2D" id=10]
 radius = 190.0
 
 [node name="Node" type="Node"]
@@ -72,148 +76,144 @@ nine_patch_stretch = true
 script = ExtResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 255.355, 190.256 )
+position = Vector2( 32.6915, 19.8502 )
 z_index = -1
 
+[node name="TextureRect" type="TextureRect" parent="StaticBody2D"]
+margin_left = -247.656
+margin_top = -129.508
+margin_right = 252.344
+margin_bottom = 120.492
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -2.27204, 29.5371 )
+position = Vector2( 222.664, 172.678 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -84.0668, 79.5227 )
+shape = SubResource( 10 )
+
+[node name="beer_1_area" type="Area2D" parent="StaticBody2D"]
+script = ExtResource( 5 )
+
+[node name="beer_1_collision" type="CollisionShape2D" parent="StaticBody2D/beer_1_area"]
+position = Vector2( -54.5302, 247.656 )
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="beer_1_area" type="Area2D" parent="StaticBody2D"]
-editor/display_folded = true
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="beer_1_collision" type="CollisionShape2D" parent="StaticBody2D/beer_1_area"]
-position = Vector2( -195.399, 181.766 )
-shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="beer_2_area" type="Area2D" parent="StaticBody2D"]
-editor/display_folded = true
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="beer_2_collision" type="CollisionShape2D" parent="StaticBody2D/beer_2_area"]
-position = Vector2( -81.7947, 181.766 )
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="beer_3_area" type="Area2D" parent="StaticBody2D"]
-editor/display_folded = true
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="beer_3_collision" type="CollisionShape2D" parent="StaticBody2D/beer_3_area"]
-position = Vector2( 49.9857, 186.31 )
-shape = SubResource( 5 )
+[node name="beer_2_collision" type="CollisionShape2D" parent="StaticBody2D/beer_2_area"]
+position = Vector2( 131.781, 245.384 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="beer_4_area" type="Area2D" parent="StaticBody2D"]
-editor/display_folded = true
+[node name="beer_3_area" type="Area2D" parent="StaticBody2D"]
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="beer_3_collision" type="CollisionShape2D" parent="StaticBody2D/beer_3_area"]
+position = Vector2( 318.091, 240.84 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="beer_4_area" type="Area2D" parent="StaticBody2D"]
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="beer_4_collision" type="CollisionShape2D" parent="StaticBody2D/beer_4_area"]
-position = Vector2( 181.766, 186.31 )
-shape = SubResource( 6 )
+position = Vector2( 493.041, 231.752 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="table14" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 530.359, 655.255 )
+[node name="table2" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 534.254, 649.958 )
 
-[node name="table9" parent="YSort" instance=ExtResource( 8 )]
+[node name="table" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 978.374, 617.22 )
 
-[node name="table8" parent="YSort" instance=ExtResource( 8 )]
+[node name="table8" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 765.887, 437.494 )
 
-[node name="table6" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 993.213, 277.337 )
+[node name="table6" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 990.941, 243.256 )
 
-[node name="client4" parent="YSort" instance=ExtResource( 9 )]
-editor/display_folded = true
+[node name="client4" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 1026.98, 474.864 )
-script = ExtResource( 10 )
+script = ExtResource( 12 )
 
 [node name="client4_area" type="Area2D" parent="YSort/client4"]
 position = Vector2( 2054.61, 1163.69 )
-script = ExtResource( 11 )
+script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client4/client4_area"]
 position = Vector2( -2206.85, -905.464 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
-[node name="client3" parent="YSort" instance=ExtResource( 12 )]
-editor/display_folded = true
+[node name="client3" parent="YSort" instance=ExtResource( 14 )]
 position = Vector2( 1042.88, 138.597 )
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 
 [node name="client3_area" type="Area2D" parent="YSort/client3"]
 position = Vector2( 2110.72, 354.436 )
-script = ExtResource( 11 )
+script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client3/client3_area"]
-position = Vector2( -2245.9, -126.15 )
-shape = SubResource( 8 )
+position = Vector2( -2254.99, -126.15 )
+shape = SubResource( 7 )
 
-[node name="client2" parent="YSort" instance=ExtResource( 14 )]
-editor/display_folded = true
+[node name="client2" parent="YSort" instance=ExtResource( 16 )]
 position = Vector2( 813.403, 286.282 )
-script = ExtResource( 15 )
+script = ExtResource( 17 )
 
 [node name="client2_area" type="Area2D" parent="YSort/client2"]
 position = Vector2( 1652.69, 644.102 )
-script = ExtResource( 11 )
+script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client2/client2_area"]
 position = Vector2( -1810.55, -427.097 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
-[node name="client1" parent="YSort" instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="client1" parent="YSort" instance=ExtResource( 18 )]
 position = Vector2( 580.129, 538.395 )
-script = ExtResource( 17 )
+script = ExtResource( 19 )
 
 [node name="client1_area" type="Area2D" parent="YSort/client1"]
-script = ExtResource( 11 )
+script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client1/client1_area"]
 position = Vector2( -162.937, 190.093 )
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
-[node name="Player" parent="YSort" instance=ExtResource( 18 )]
+[node name="Player" parent="YSort" instance=ExtResource( 20 )]
 position = Vector2( 134.095, 633.981 )
 
-[node name="bar" type="Sprite" parent="YSort"]
-position = Vector2( 231.629, 210.445 )
-scale = Vector2( 0.683069, 0.984859 )
-texture = ExtResource( 19 )
-
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 20 )
+stream = ExtResource( 21 )
 autoplay = true
+
 [connection signal="body_entered" from="StaticBody2D/beer_1_area" to="StaticBody2D/beer_1_area" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="StaticBody2D/beer_1_area" to="StaticBody2D/beer_1_area" method="_on_beer_1_area_body_exited"]
 [connection signal="body_entered" from="StaticBody2D/beer_2_area" to="StaticBody2D/beer_2_area" method="_on_beer_2_area_body_entered"]
