@@ -9,11 +9,11 @@
 [ext_resource path="res://beers/beer3.gd" type="Script" id=7]
 [ext_resource path="res://beers/beer4.gd" type="Script" id=8]
 [ext_resource path="res://tables/table.tscn" type="PackedScene" id=9]
-[ext_resource path="res://clients/client1.tscn" type="PackedScene" id=10]
-[ext_resource path="res://clients/client4.gd" type="Script" id=11]
-[ext_resource path="res://clients/clients.gd" type="Script" id=12]
-[ext_resource path="res://clients/client3.gd" type="Script" id=13]
-[ext_resource path="res://clients/client2.gd" type="Script" id=14]
+[ext_resource path="res://clients/client4.tscn" type="PackedScene" id=10]
+[ext_resource path="res://clients/clients.gd" type="Script" id=11]
+[ext_resource path="res://clients/client3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://clients/client2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://clients/client1.tscn" type="PackedScene" id=14]
 [ext_resource path="res://clients/client1.gd" type="Script" id=15]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=16]
 [ext_resource path="res://music/PixelParade.ogg" type="AudioStream" id=17]
@@ -160,45 +160,47 @@ position = Vector2( 765.887, 437.494 )
 position = Vector2( 993.213, 277.337 )
 
 [node name="client4" parent="YSort" instance=ExtResource( 10 )]
-position = Vector2( 1030.02, 532.059 )
-script = ExtResource( 11 )
+position = Vector2( 1026.98, 474.864 )
 
 [node name="client4_area" type="Area2D" parent="YSort/client4"]
-position = Vector2( -5.43115, 99.5728 )
-script = ExtResource( 12 )
+position = Vector2( 2054.61, 1163.69 )
+script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client4/client4_area"]
-position = Vector2( -175.609, 66.9855 )
+position = Vector2( -2206.85, -905.464 )
 shape = SubResource( 6 )
 
-[node name="client3" parent="YSort" instance=ExtResource( 10 )]
-position = Vector2( 1055.36, 177.218 )
-script = ExtResource( 13 )
+[node name="client3" parent="YSort" instance=ExtResource( 12 )]
+editor/display_folded = true
+position = Vector2( 1042.88, 138.597 )
 
 [node name="client3_area" type="Area2D" parent="YSort/client3"]
-script = ExtResource( 12 )
+position = Vector2( 2110.72, 354.436 )
+script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client3/client3_area"]
-position = Vector2( -182.852, 182.852 )
+position = Vector2( -2245.9, -126.15 )
 shape = SubResource( 7 )
 
-[node name="client2" parent="YSort" instance=ExtResource( 10 )]
-position = Vector2( 826.345, 322.051 )
-script = ExtResource( 14 )
+[node name="client2" parent="YSort" instance=ExtResource( 13 )]
+editor/display_folded = true
+position = Vector2( 813.403, 286.282 )
 
 [node name="client2_area" type="Area2D" parent="YSort/client2"]
-script = ExtResource( 12 )
+position = Vector2( 1652.69, 644.102 )
+script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client2/client2_area"]
-position = Vector2( -188.283, 213.629 )
+position = Vector2( -1810.55, -427.097 )
 shape = SubResource( 8 )
 
-[node name="client1" parent="YSort" instance=ExtResource( 10 )]
+[node name="client1" parent="YSort" instance=ExtResource( 14 )]
+editor/display_folded = true
 position = Vector2( 580.129, 538.395 )
 script = ExtResource( 15 )
 
 [node name="client1_area" type="Area2D" parent="YSort/client1"]
-script = ExtResource( 12 )
+script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/client1/client1_area"]
 position = Vector2( -162.937, 190.093 )

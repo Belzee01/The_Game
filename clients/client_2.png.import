@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/beer_3.png-3d4edb93c79979eb6fc0e47e6717e089.stex"
+path="res://.import/client_2.png-57d8675b1cc0f6e69ffaa4e7e2b65dab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://beers/beer_3.png"
-dest_files=[ "res://.import/beer_3.png-3d4edb93c79979eb6fc0e47e6717e089.stex" ]
+source_file="res://clients/client_2.png"
+dest_files=[ "res://.import/client_2.png-57d8675b1cc0f6e69ffaa4e7e2b65dab.stex" ]
 
 [params]
 
