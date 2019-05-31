@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PixelParade.ogg-19c9c0c6a42c929c3670c741268de21b.oggstr"
+
+[deps]
+
+source_file="res://music/PixelParade.ogg"
+dest_files=[ "res://.import/PixelParade.ogg-19c9c0c6a42c929c3670c741268de21b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
