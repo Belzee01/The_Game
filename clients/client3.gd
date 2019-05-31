@@ -28,7 +28,6 @@ func beer_passed():
 	if get_tree().get_nodes_in_group(str("beer_order_3", self)).size() > 0:
 		var current_beer = get_tree().get_nodes_in_group(str("beer_order_3", self)).pop_front()
 		remove_child(current_beer)
-		current_beer.queue_free()
 	
 func display_beer_order(beer_order):
 	var current_beer = beer_order.instance()
