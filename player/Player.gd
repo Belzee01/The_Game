@@ -8,20 +8,20 @@ func _physics_process(delta):
 	is_beer_picked_up()
 	is_beer_left()
 	is_beer_passed()
-	is_beer_drinked(delta)
 	if movedir != dir.center:
 		if dir.holds_beer == false :
 			animation_switch("walk")
-		else:
+		elif dir.is_beer_drinked == false:
 			animation_switch("hold_beer")
 			load_beer_scene()
 
 	else:
 		if dir.holds_beer == false :
 			animation_switch("idle")
-		else:
+		elif dir.is_beer_drinked == false:
 			animation_switch("idle_beer")
 			load_beer_scene()
+	is_beer_drinked(delta)
 
 
 func is_beer_picked_up():
@@ -44,7 +44,14 @@ func is_beer_passed():
 func is_beer_drinked(delta):
 	if dir.holds_beer == true:
 		if Input.is_action_pressed("drink_beer"):
+			dir.is_beer_drinked = true
+			animation_switch("drink_beer")
 			drink_beer(delta)
+		else:
+			dir.is_beer_drinked = false
+			var current_beer = get_tree().get_nodes_in_group(str("beer", self)).back()
+			current_beer.position = Vector2(0, -120)
+
 
 func load_beer_scene():
 	if dir.beer_loaded == false:
