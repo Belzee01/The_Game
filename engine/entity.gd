@@ -155,4 +155,6 @@ func drink_beer(delta):
 				beer3.drink(delta)
 			4:
 				beer4.drink(delta)
+		var current_beer = get_tree().get_nodes_in_group(str("beer", self)).back()
+		current_beer.position = Vector2(0, -140)
 		dir.alkoValue = clamp(dir.alkoValue, 0, 200)
