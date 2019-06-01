@@ -65,15 +65,32 @@ tile_data = PoolIntArray( -1769470, 2, 0, -1769469, 2, 0, -1703934, 2, 0, -17039
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" type="TextureProgress" parent="GUI"]
-margin_left = 67.0
-margin_top = 8.0
-margin_right = 404.0
-margin_bottom = 58.0
+margin_left = 134.175
+margin_top = 6.53967
+margin_right = 471.175
+margin_bottom = 56.5397
 max_value = 200.0
 value = 200.0
 texture_progress = ExtResource( 2 )
 nine_patch_stretch = true
 script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="GUI"]
+margin_left = 1.0
+margin_right = 134.0
+margin_bottom = 55.0
+text = "Points:"
+percent_visible = -0.142857
+
+[node name="Label2" type="Label" parent="GUI"]
+margin_left = 1180.0
+margin_top = 13.597
+margin_right = 1499.0
+margin_bottom = 144.597
+text = "Pick beer: A
+Leave beer: S
+Pass beer : D
+Drink beer: F"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 32.6915, 19.8502 )
