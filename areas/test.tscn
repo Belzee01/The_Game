@@ -79,6 +79,16 @@ texture_progress = ExtResource( 2 )
 nine_patch_stretch = true
 script = ExtResource( 3 )
 
+[node name="Label" type="Label" parent="GUI"]
+margin_left = 1082.09
+margin_top = 18.9841
+margin_right = 1232.09
+margin_bottom = 86.9841
+text = "Take beer: A
+Leave beer: S
+Pass beer: D
+Drink beer: F"
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 32.6915, 19.8502 )
 z_index = -1
